@@ -5,17 +5,20 @@
     </head>
 <body>
     <header><h1><a href="/">Django girls Blog</a></h1></header>
-    <article>
-        <time>published: 4.11.2023, 15:36</time>
-            <h2><a href="">What is girls in technolog?</a></h2>
-            <p>Girls in Technology means closing the gender gap in the tech workforce, removing stigmas around gender and driving innovation in the technology sector, no matter how you look at it,a more gender-diverse workforce is better for business especially in tehcnology. </br> Moreover the big role or importance of women in technology is to solve the unique challenges faced by women in their carrier. Online networking, career development apps and mentor matching platforms are always that technology can help women access opportunities and advance their careers.</p>
-            <p>img src="c:\Users\hp\OneDrive\Pictures\OIP.jpg" alt="Girls in technology">
-    </article>
 
-    <article>
+    {% for post in posts %}
+        <article>
+        <time> {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>Girls in Technology means closing the gender gap in the tech workforce, removing stigmas around gender and driving innovation in the technology sector, no matter how you look at it,a more gender-diverse workforce is better for business especially in tehcnology. </br> Moreover the big role or importance of women in technology is to solve the unique challenges faced by women in their carrier. Online networking, career development apps and mentor matching platforms are always that technology can help women access opportunities and advance their careers.</p>
+            <p> {{ post.text|linebreaksbr }}</p>
+        </article>
+    {% endfor %}
+
+    {{ posts }}
         <time>published: 4.11.2023, 15:39</time>
         <h2><a href="">Binary IO Lab.</a></h2>
         <p>Binary IO Lab is the company that different developer from different perspective came together for the purpose of coding, engage to each other and have fun. Binary IO Lab is located at Mbezi Beach, Kunduchi. Your mostly welcome</p>
-    </article>
+    {{ posts }}
 </body>
 </html>
